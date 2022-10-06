@@ -1,7 +1,9 @@
-const ActivityForm = () => {
+const ActivityForm = ({ onSubmit }) => {
   return (
     <div className="activity-form">
-      <p>Form</p>
+      <button onClick={() => onSubmit("?type=recreational")}>
+        Search for activity
+      </button>
     </div>
   );
 };

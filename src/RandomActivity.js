@@ -1,22 +1,27 @@
 import ActivityForm from "./ActivityForm";
 import ActivityView from "./ActivityView";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const RandomActivity = () => {
   const [activity, setActivity] = useState("activity");
 
-  useEffect(() => {
-    requestActivity();
-  }, []);
-
-  async function requestActivity() {
-    const res = await fetch("http://www.boredapi.com/api/activity/");
+  const requestActivity = useCallback(async (data = "") => {
+    const res = await fetch("http://www.boredapi.com/api/activity/" + data);
     const json = await res.json();
     setActivity(json);
-  }
+  }, []);
+
+  useEffect(() => {
+    requestActivity();
+  }, [requestActivity]);
+
+  const onSubmitForm = (data) => {
+    requestActivity(data);
+  };
+
   return (
     <div className="rand-act">
-      <ActivityForm />
+      <ActivityForm onSubmit={onSubmitForm} />
       <ActivityView activityObject={activity} />
     </div>
   );
