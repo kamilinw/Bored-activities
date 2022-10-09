@@ -1,24 +1,30 @@
 import { Link } from "react-router-dom";
+import "antd/dist/antd.css";
+import { Breadcrumb } from "antd";
 
 const Navigation = () => {
   return (
     <div className="navigation">
-      <div className="logo">
-        <h2>Bored activities</h2>
+      <div id="logo">
+        <p>Bored activities</p>
       </div>
-      <ul>
-        <li>
-          <Link to="/">Random activity</Link>
-        </li>
-        <p> / </p>
-        <li>
-          <Link to="/fav">Favourites</Link>
-        </li>
-        <p> / </p>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-      </ul>
+      <Breadcrumb>
+        <Breadcrumb.Item>
+          <Link className="link" to="/">
+            Random activity
+          </Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <Link className="link" to="/fav">
+            Favourites
+          </Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <Link className="link" to="/about">
+            About
+          </Link>
+        </Breadcrumb.Item>
+      </Breadcrumb>
     </div>
   );
 };
