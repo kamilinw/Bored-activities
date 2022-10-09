@@ -53,7 +53,19 @@ body {
   flex-wrap: wrap;
   gap: 1em;
   justify-content: space-between;
+}
 
+.error {
+  margin: 1em 0em 0em 0em;
+  min-width: 250px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 7px #a7a7a7;
+  flex: 3 1 0;
+  height: fit-content;
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .activity-form {
@@ -72,6 +84,7 @@ body {
   min-width: 250px;
   background-color: #ffffff;
   box-shadow: 0px 0px 7px #a7a7a7;
+  height: fit-content;
   flex: 3 1 0;
   display: flex;
   flex-wrap: wrap;
@@ -82,6 +95,9 @@ body {
   padding-left: 2em;
   flex: 1 1 0;
   border-right: 1 solid rgb(230, 230, 230);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .activity-details ul {
@@ -101,11 +117,6 @@ body {
   min-width: 200px;
   justify-content: center;
   align-items: center;
-}
-
-.activity-text * {
-  text-align: center;
-
 }
 
 .fav {

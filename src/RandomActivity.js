@@ -3,10 +3,10 @@ import ActivityView from "./ActivityView";
 import { useCallback, useEffect, useState } from "react";
 
 const RandomActivity = () => {
-  const [activity, setActivity] = useState("activity");
+  const [activity, setActivity] = useState("");
 
   const requestActivity = useCallback(async (data = "") => {
-    const res = await fetch("http://www.boredapi.com/api/activity/" + data);
+    const res = await fetch("http://www.boredapi.com/api/activity/?" + data);
     const json = await res.json();
     setActivity(json);
   }, []);

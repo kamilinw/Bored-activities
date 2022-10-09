@@ -1,7 +1,11 @@
 import ActivityDetail from "./ActivityDetail";
+import ErrorFetchingActivity from "./ErrorFetchingActivity";
 
 const ActivityView = ({ activityObject }) => {
-  const { activity, type, participants, price, link, key, accessibility } =
+  if (activityObject.error) {
+    return <ErrorFetchingActivity message={activityObject.error} />;
+  }
+  const { activity, type, participants, price, link, accessibility } =
     activityObject;
 
   if (typeof link == "function") {
