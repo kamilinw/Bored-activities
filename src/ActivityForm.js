@@ -24,6 +24,18 @@ const ActivityForm = ({ onSubmit }) => {
     "busywork",
   ];
 
+  const priceMarks = {
+    0: "free",
+    50: "cheap",
+    100: "expensive",
+  };
+
+  const accessibilityMarks = {
+    0: "easy",
+    50: "medium",
+    100: "hard",
+  };
+
   const onSubmitForm = (e) => {
     e.preventDefault();
     console.log("refresh prevented");
@@ -71,7 +83,7 @@ const ActivityForm = ({ onSubmit }) => {
         <Slider
           defaultValue={participants}
           min={1}
-          max={10}
+          max={8}
           disabled={!participantsEnabled}
           onChange={(participants) => setParticipants(participants)}
         />
@@ -85,6 +97,7 @@ const ActivityForm = ({ onSubmit }) => {
         <br />
         <Slider
           range
+          marks={priceMarks}
           defaultValue={[price[0], price[1]]}
           disabled={!priceEnabled}
           onChange={([min, max]) => {
@@ -101,6 +114,7 @@ const ActivityForm = ({ onSubmit }) => {
         <br />
         <Slider
           range
+          marks={accessibilityMarks}
           defaultValue={[accessibility[0], accessibility[1]]}
           disabled={!accessibilityEnabled}
           onChange={([min, max]) => {
