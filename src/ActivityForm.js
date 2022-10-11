@@ -53,9 +53,10 @@ const ActivityForm = ({ onSubmit }) => {
       urlParams.maxaccessibility = accessibility[1] / 100;
     }
 
-    urlParams.participants = participants;
-    urlParams.type = type;
-
+    if (participantsEnabled) {
+      urlParams.participants = participants;
+    }
+    urlParams.type = type ? type : "";
     return new URLSearchParams(urlParams);
   };
 
@@ -64,14 +65,18 @@ const ActivityForm = ({ onSubmit }) => {
       <form onSubmit={onSubmitForm}>
         <label htmlFor="type">Type:</label>
         <br />
-        <Select style={{ width: 150 }} onChange={(option) => setType(option)}>
-          <Option value="" />
+        <Select
+          style={{ width: 150 }}
+          onChange={(option) => setType(option)}
+          allowClear
+        >
           {types.map((type, id) => (
             <Option key={id} value={type}>
               {type}
             </Option>
           ))}
         </Select>
+        <br />
         <br />
         <label htmlFor="participants">Participants </label>
         <Switch
