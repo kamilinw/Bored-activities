@@ -73,6 +73,33 @@ body {
   flex: 3 1 0;
   display: flex;
   flex-wrap: wrap;
+
+}
+
+#information {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  transform: scale(1.5);
+  transition: transform 150ms ease-out 50ms;
+}
+
+#information:hover {
+  transform: scale(2);
+  cursor: pointer;
+}
+
+#heart {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transform: scale(1.5);
+  transition: transform 150ms ease-out 50ms;
+}
+
+#heart:hover {
+  transform: scale(2);
+  cursor: pointer;
 }
 
 .activity-details {
@@ -105,6 +132,7 @@ body {
   min-width: 200px;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .activity-text p,
