@@ -8,7 +8,16 @@ const RandomActivity = () => {
   const requestActivity = useCallback(async (data = "") => {
     const res = await fetch("http://www.boredapi.com/api/activity/?" + data);
     const json = await res.json();
-    setActivity(json);
+
+    let isLiked = false;
+    if (json.key) {
+      const localStorageActivity = JSON.parse(
+        window.localStorage.getItem(json.key)
+      );
+      isLiked = localStorageActivity?.isLiked;
+    }
+
+    setActivity({ ...json, isLiked });
   }, []);
 
   useEffect(() => {
@@ -22,7 +31,10 @@ const RandomActivity = () => {
   return (
     <div className="rand-act">
       <ActivityForm onSubmit={onSubmitForm} />
-      <ActivityView activityObject={activity} />
+      <ActivityView
+        activityObject={activity}
+        setIsLiked={(isLiked) => setActivity({ ...activity, isLiked })}
+      />
     </div>
   );
 };

@@ -6,16 +6,31 @@ import {
   QuestionCircleOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import { useState } from "react";
 
-const ActivityView = ({ activityObject }) => {
-  const [activityLiked, setActivityLiked] = useState(false);
-
+const ActivityView = ({ activityObject, setIsLiked }) => {
   if (activityObject.error) {
     return <ErrorFetchingActivity message={activityObject.error} />;
   }
-  const { activity, type, participants, price, link, accessibility } =
-    activityObject;
+  const {
+    activity,
+    type,
+    participants,
+    price,
+    key,
+    link,
+    accessibility,
+    isLiked,
+  } = activityObject;
+
+  const likeButtonOnClick = (activityLiked) => {
+    if (activityLiked) {
+      window.localStorage.setItem(key, JSON.stringify(activityObject));
+    } else {
+      window.localStorage.removeItem(key);
+    }
+
+    setIsLiked(activityLiked);
+  };
 
   return (
     <div className="activity-view">
@@ -37,17 +52,17 @@ const ActivityView = ({ activityObject }) => {
           ""
         )}
         <p className="activity">{activity}</p>
-        {activityLiked ? (
+        {isLiked ? (
           <HeartFilled
             id="heart"
             style={{ color: "#eb2f96" }}
-            onClick={() => setActivityLiked(!activityLiked)}
+            onClick={() => likeButtonOnClick(false)}
           />
         ) : (
           <HeartOutlined
             id="heart"
             style={{ color: "#eb2f96" }}
-            onClick={() => setActivityLiked(!activityLiked)}
+            onClick={() => likeButtonOnClick(true)}
           />
         )}
       </div>
