@@ -24,12 +24,41 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
 
   const likeButtonOnClick = (activityLiked) => {
     if (activityLiked) {
-      window.localStorage.setItem(key, JSON.stringify(activityObject));
+      let localStorageKeys = getKeysFromLocalStorage();
+      localStorageKeys = [...localStorageKeys, key];
+      saveKeysToLocalStorage(localStorageKeys);
+      window.localStorage.setItem(
+        key,
+        JSON.stringify({ ...activityObject, isLiked: activityLiked })
+      );
     } else {
+      let localStorageKeys = getKeysFromLocalStorage();
+      const keyIndex = localStorageKeys.indexOf(key);
+      if (keyIndex >= 0) {
+        localStorageKeys.splice(keyIndex, 1);
+      }
+      saveKeysToLocalStorage(localStorageKeys);
       window.localStorage.removeItem(key);
     }
-
     setIsLiked(activityLiked);
+  };
+
+  const getKeysFromLocalStorage = () => {
+    let localStorageKeys = JSON.parse(
+      window.localStorage.getItem("favourite_activity_keys")
+    );
+    if (!localStorageKeys) {
+      localStorageKeys = [];
+    }
+    return localStorageKeys;
+  };
+
+  const saveKeysToLocalStorage = (keys) => {
+    window.localStorage.removeItem("favourite_activity_keys");
+    window.localStorage.setItem(
+      "favourite_activity_keys",
+      JSON.stringify(keys)
+    );
   };
 
   return (
