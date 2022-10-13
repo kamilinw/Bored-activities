@@ -6,6 +6,10 @@ import {
   QuestionCircleOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
+import {
+  getKeysFromLocalStorage,
+  saveKeysToLocalStorage,
+} from "./LocalStorage";
 
 const ActivityView = ({ activityObject, setIsLiked }) => {
   if (activityObject.error) {
@@ -40,25 +44,7 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
       saveKeysToLocalStorage(localStorageKeys);
       window.localStorage.removeItem(key);
     }
-    setIsLiked(activityLiked);
-  };
-
-  const getKeysFromLocalStorage = () => {
-    let localStorageKeys = JSON.parse(
-      window.localStorage.getItem("favourite_activity_keys")
-    );
-    if (!localStorageKeys) {
-      localStorageKeys = [];
-    }
-    return localStorageKeys;
-  };
-
-  const saveKeysToLocalStorage = (keys) => {
-    window.localStorage.removeItem("favourite_activity_keys");
-    window.localStorage.setItem(
-      "favourite_activity_keys",
-      JSON.stringify(keys)
-    );
+    setIsLiked(activityLiked, activityObject);
   };
 
   return (
