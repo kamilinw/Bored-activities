@@ -1,4 +1,4 @@
-import { Slider, Switch, Select } from "antd";
+import { Slider, Switch, Select, Button } from "antd";
 import { useState } from "react";
 import "antd/dist/antd.css";
 const { Option } = Select;
@@ -77,60 +77,64 @@ const ActivityForm = ({ onSubmit }) => {
           ))}
         </Select>
         <br />
-        <br />
-        <label htmlFor="participants">Participants </label>
-        <Switch
-          size="small"
-          checked={participantsEnabled}
-          onChange={(checked) => setParticipantsEnabled(checked)}
-        />
-        <br />
-        <Slider
-          defaultValue={participants}
-          min={1}
-          max={8}
-          disabled={!participantsEnabled}
-          onChange={(participants) => setParticipants(participants)}
-        />
-        <br />
-        <label htmlFor="price">Price </label>
-        <Switch
-          size="small"
-          checked={priceEnabled}
-          onChange={(checked) => setPriceEnabled(checked)}
-        />
-        <br />
-        <Slider
-          range
-          marks={priceMarks}
-          defaultValue={[price[0], price[1]]}
-          disabled={!priceEnabled}
-          onChange={([min, max]) => {
-            setPrice([min, max]);
-          }}
-        />
-        <br />
-        <label htmlFor="accessibility">Accessibility </label>
-        <Switch
-          size="small"
-          checked={accessibilityEnabled}
-          onChange={(checked) => setAccessibilityEnabled(checked)}
-        />
-        <br />
-        <Slider
-          range
-          marks={accessibilityMarks}
-          defaultValue={[accessibility[0], accessibility[1]]}
-          disabled={!accessibilityEnabled}
-          onChange={([min, max]) => {
-            setAccessibility([min, max]);
-          }}
-        />
+        <label htmlFor="participants">Participants:</label>
+        <div className="user-input">
+          <Switch
+            className="switch"
+            size="small"
+            checked={participantsEnabled}
+            onChange={(checked) => setParticipantsEnabled(checked)}
+          />
+          <Slider
+            className="slider"
+            defaultValue={participants}
+            min={1}
+            max={8}
+            disabled={!participantsEnabled}
+            onChange={(participants) => setParticipants(participants)}
+          />
+        </div>
+        <label htmlFor="price">Price:</label>
+        <div className="user-input">
+          <Switch
+            size="small"
+            checked={priceEnabled}
+            onChange={(checked) => setPriceEnabled(checked)}
+          />
+          <Slider
+            className="slider"
+            range
+            marks={priceMarks}
+            defaultValue={[price[0], price[1]]}
+            disabled={!priceEnabled}
+            onChange={([min, max]) => {
+              setPrice([min, max]);
+            }}
+          />
+        </div>
+        <label htmlFor="accessibility">Accessibility:</label>
+        <div className="user-input">
+          <Switch
+            size="small"
+            checked={accessibilityEnabled}
+            onChange={(checked) => setAccessibilityEnabled(checked)}
+          />
+          <Slider
+            className="slider"
+            range
+            marks={accessibilityMarks}
+            defaultValue={[accessibility[0], accessibility[1]]}
+            disabled={!accessibilityEnabled}
+            onChange={([min, max]) => {
+              setAccessibility([min, max]);
+            }}
+          />
+        </div>
         <br />
 
-        <button onClick={() => onSubmit(makeParams())}>
+        <Button type="primary" block onClick={() => onSubmit(makeParams())}>
           Search for activity
-        </button>
+        </Button>
       </form>
     </div>
   );
