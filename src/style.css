@@ -180,6 +180,48 @@ body {
   margin-bottom: 2em;
 }
 
+.footer {
+  background-color: #252525;
+  border-top: 2px solid rgb(9, 136, 240);
+  margin-top: 1em;
+  width: 100%;
+  padding: 2em;
+  height: fit-content;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 3em;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 3em;
+
+}
+
+.contact-details {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1em;
+}
+
+.icon img {
+  width: 20px;
+  height: 20px;
 }
 
 .about {
