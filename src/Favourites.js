@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ActivityView from "./ActivityView";
 import { getKeysFromLocalStorage } from "./LocalStorage";
+import NoFavourites from "./NoFavourites";
 
 const Favourites = () => {
   const [activities, setActivities] = useState([]);
@@ -24,13 +25,17 @@ const Favourites = () => {
 
   return (
     <div className="favourites">
-      {activities.map((activity) => (
-        <ActivityView
-          key={activity.key}
-          activityObject={activity}
-          setIsLiked={setIsLiked}
-        />
-      ))}
+      {activities.length ? (
+        activities.map((activity) => (
+          <ActivityView
+            key={activity.key}
+            activityObject={activity}
+            setIsLiked={setIsLiked}
+          />
+        ))
+      ) : (
+        <NoFavourites />
+      )}
     </div>
   );
 };
