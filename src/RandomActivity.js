@@ -29,9 +29,6 @@ const RandomActivity = () => {
   }, []);
 
   useEffect(() => {
-    if (true) {
-      throw new Error("Sth went weong");
-    }
     requestActivity();
   }, [requestActivity]);
 

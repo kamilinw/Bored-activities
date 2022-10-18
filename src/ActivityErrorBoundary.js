@@ -11,9 +11,7 @@ class ActivityErrorBoundary extends React.Component {
   }
 
   render() {
-    const { hasError, error, errorInfo } = this.state;
-    console.log("Error!!!!");
-    console.log(errorInfo);
+    const { hasError, error } = this.state;
     if (hasError) {
       return <this.props.FallbackComponent message={error.toString()} />;
     }
