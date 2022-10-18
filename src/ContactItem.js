@@ -5,7 +5,13 @@ const ContactItem = ({ imgPath, alt, info, link = "" }) => {
         <img src={imgPath} alt={alt}></img>
       </div>
       <div className="contact-info">
-        {link.length > 0 ? <a href={link}>{info}</a> : <p>{info}</p>}
+        {link.length > 0 ? (
+          <a href={link} target="_blank" rel="noreferrer">
+            {info}
+          </a>
+        ) : (
+          <p>{info}</p>
+        )}
       </div>
     </div>
   );
