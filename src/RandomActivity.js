@@ -1,26 +1,37 @@
 import ActivityForm from "./ActivityForm";
 import ActivityView from "./ActivityView";
 import { useCallback, useEffect, useState } from "react";
+import ActivityErrorBoundary from "./ActivityErrorBoundary";
+import ErrorFetchingActivity from "./ErrorFetchingActivity";
 
 const RandomActivity = () => {
-  const [activity, setActivity] = useState("");
+  const [activity, setActivity] = useState({ error: "loading" });
 
-  const requestActivity = useCallback(async (data = "") => {
-    const res = await fetch("http://www.boredapi.com/api/activity/?" + data);
-    const json = await res.json();
-
-    let isLiked = false;
-    if (json.key) {
-      const localStorageActivity = JSON.parse(
-        window.localStorage.getItem(json.key)
+  const requestActivity = useCallback((data = "") => {
+    fetch("http://www.boredapi.com/api/activity/?" + data)
+      .then((response) => response.json())
+      .then(
+        (json) => {
+          console.log(json);
+          let isLiked = false;
+          if (json.key) {
+            const localStorageActivity = JSON.parse(
+              window.localStorage.getItem(json.key)
+            );
+            isLiked = localStorageActivity?.isLiked;
+          }
+          setActivity({ ...json, isLiked });
+        },
+        (error) => {
+          setActivity({ error: error.message });
+        }
       );
-      isLiked = localStorageActivity?.isLiked;
-    }
-
-    setActivity({ ...json, isLiked });
   }, []);
 
   useEffect(() => {
+    if (true) {
+      throw new Error("Sth went weong");
+    }
     requestActivity();
   }, [requestActivity]);
 
@@ -39,4 +50,12 @@ const RandomActivity = () => {
   );
 };
 
-export default RandomActivity;
+const WrappedRandomActivity = () => {
+  return (
+    <ActivityErrorBoundary FallbackComponent={ErrorFetchingActivity}>
+      <RandomActivity />
+    </ActivityErrorBoundary>
+  );
+};
+
+export default WrappedRandomActivity;
