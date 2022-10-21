@@ -11,12 +11,22 @@ const Footer = () => {
       <div className="footer-info">
         <h2 style={{ color: "white" }}>Bored activities</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut
-          euismod ligula, id vehicula libero. Etiam non orci felis. Nunc sed
-          ultricies risus. Maecenas iaculis vitae felis sed bibendum. Sed ut
-          egestas nisl. Nulla iaculis suscipit risus id porta. Vestibulum ante
-          ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-          curae; Vivamus tempus magna quis semper feugiat.
+          This is my first React application. It is my own implementation of{" "}
+          <a
+            href="https://www.boredapi.com/documentation#endpoints-price"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Bored API.
+          </a>{" "}
+          Check out source code on{" "}
+          <a
+            href="https://github.com/kamilinw/Bored-activities"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub repository
+          </a>
         </p>
       </div>
       <div className="footer-contact">
