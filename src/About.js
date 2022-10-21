@@ -2,6 +2,7 @@ import cssImg from "./images/css.png";
 import htmlImg from "./images/html.png";
 import jsImg from "./images/js.png";
 import reactImg from "./images/react.png";
+import Technology from "./Technology";
 
 const About = () => {
   return (
@@ -28,12 +29,15 @@ const About = () => {
       </p>
       <h2>Technologies</h2>
       <div className="tech">
-        <img src={jsImg} alt="javaScript" />
-        <img src={reactImg} alt="react" />
-        <img src={htmlImg} alt="html" />
-        <img src={cssImg} alt="CSS" />
+        <Technology
+          imgSrc={jsImg}
+          alt="javaScript technology"
+          name="JavaScript"
+        />
+        <Technology imgSrc={reactImg} alt="react technology" name="React" />
+        <Technology imgSrc={htmlImg} alt="html technology" name="HTML" />
+        <Technology imgSrc={cssImg} alt="CSS technology" name="CSS" />
       </div>
-      <br />
       <h2>About me</h2>
       <p>
         Programming has always been my passion. Right now I&apos;m software
