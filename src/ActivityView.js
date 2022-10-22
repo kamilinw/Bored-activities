@@ -48,7 +48,7 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
   };
 
   return (
-    <div className="activity-view">
+    <section className="activity-view">
       <div className="activity-details">
         <ul>
           <ActivityDetail name="type" value={type} />
@@ -81,7 +81,7 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
           />
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

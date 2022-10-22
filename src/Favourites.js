@@ -24,7 +24,7 @@ const Favourites = () => {
   };
 
   return (
-    <div className="favourites">
+    <main className="favourites">
       {activities.length ? (
         activities.map((activity) => (
           <ActivityView
@@ -36,7 +36,7 @@ const Favourites = () => {
       ) : (
         <NoFavourites />
       )}
-    </div>
+    </main>
   );
 };
 

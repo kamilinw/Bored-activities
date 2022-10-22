@@ -7,7 +7,7 @@ import ContactItem from "./ContactItem";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="footer-info">
         <h2 style={{ color: "white" }}>Bored activities</h2>
         <p>
@@ -29,7 +29,7 @@ const Footer = () => {
           </a>
         </p>
       </div>
-      <div className="footer-contact">
+      <address className="footer-contact">
         <h2 style={{ color: "white" }}>Contact</h2>
         <div className="contact-details">
           <div className="contact-name">
@@ -64,8 +64,8 @@ const Footer = () => {
             link="https://www.facebook.com/kamil.wnek.96"
           />
         </div>
-      </div>
-    </div>
+      </address>
+    </footer>
   );
 };
 

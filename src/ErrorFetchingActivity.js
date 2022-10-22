@@ -1,8 +1,8 @@
 function ErrorFetchingActivity({ message }) {
   return (
-    <div className="error" role="alert">
+    <section className="error" role="alert">
       <p>{message}</p>
-    </div>
+    </section>
   );
 }
 

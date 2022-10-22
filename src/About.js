@@ -6,7 +6,7 @@ import Technology from "./Technology";
 
 const About = () => {
   return (
-    <div className="about">
+    <main className="about">
       <h2>Bored Activities</h2>
       <p>
         This is my first React app, and it was developed while I was learning to
@@ -48,7 +48,7 @@ const About = () => {
         University of Technology), will help me to understand real problems and
         find their solutions.
       </p>
-    </div>
+    </main>
   );
 };
 

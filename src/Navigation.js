@@ -4,7 +4,7 @@ import { Breadcrumb } from "antd";
 
 const Navigation = () => {
   return (
-    <div className="navigation">
+    <nav className="navigation">
       <div id="logo">
         <p>Bored activities</p>
       </div>
@@ -25,7 +25,7 @@ const Navigation = () => {
           </Link>
         </Breadcrumb.Item>
       </Breadcrumb>
-    </div>
+    </nav>
   );
 };
 

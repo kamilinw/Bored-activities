@@ -37,13 +37,13 @@ const RandomActivity = () => {
   };
 
   return (
-    <div className="rand-act">
+    <main className="rand-act">
       <ActivityForm onSubmit={onSubmitForm} />
       <ActivityView
         activityObject={activity}
         setIsLiked={(isLiked) => setActivity({ ...activity, isLiked })}
       />
-    </div>
+    </main>
   );
 };
 

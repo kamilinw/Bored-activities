@@ -61,7 +61,7 @@ const ActivityForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="activity-form">
+    <section className="activity-form">
       <form onSubmit={onSubmitForm}>
         <label htmlFor="type">Type:</label>
         <br />
@@ -136,7 +136,7 @@ const ActivityForm = ({ onSubmit }) => {
           Search for activity
         </Button>
       </form>
-    </div>
+    </section>
   );
 };
 
