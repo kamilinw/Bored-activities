@@ -284,5 +284,5 @@ body {
 }
 
 .tech-item img:hover+p {
-  transform: translateY(10px);
+  transform: translate3d(0, 10px, 0);
 }
