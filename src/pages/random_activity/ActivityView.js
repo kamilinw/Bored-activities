@@ -60,8 +60,14 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
       <div className="activity-text">
         {typeof link != "function" && link.length > 0 ? (
           <QuestionCircleOutlined
+            tabIndex="0"
             id="information"
             onClick={() => window.open(link)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                window.open(link);
+              }
+            }}
           />
         ) : (
           ""
@@ -69,15 +75,27 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
         <p className="activity">{activity}</p>
         {isLiked ? (
           <HeartFilled
+            tabIndex="0"
             id="heart"
             style={{ color: "#eb2f96" }}
             onClick={() => likeButtonOnClick(false)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                likeButtonOnClick(false);
+              }
+            }}
           />
         ) : (
           <HeartOutlined
+            tabIndex="0"
             id="heart"
             style={{ color: "#eb2f96" }}
             onClick={() => likeButtonOnClick(true)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                likeButtonOnClick(true);
+              }
+            }}
           />
         )}
       </div>

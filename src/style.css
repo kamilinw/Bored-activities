@@ -26,6 +26,10 @@ body {
   padding: 1em 6% 0.7em 6%;
 }
 
+.link:focus {
+  outline: auto;
+}
+
 #logo {
   display: flex;
   justify-content: center;
@@ -213,6 +217,10 @@ body {
   justify-content: space-between;
 }
 
+.footer a:focus {
+  outline: auto;
+}
+
 .footer-info {
   display: flex;
   flex-direction: column;
@@ -254,6 +262,10 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.about a:focus {
+  outline: auto;
 }
 
 .tech {
