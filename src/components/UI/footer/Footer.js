@@ -1,14 +1,14 @@
-import telImg from "./images/tel.png";
-import mailImg from "./images/mail.png";
-import linkedinImg from "./images/in.png";
-import gitImg from "./images/git.png";
-import messengerImg from "./images/messenger.png";
+import telImg from "../../../images/tel.png";
+import mailImg from "../../../images/mail.png";
+import linkedinImg from "../../../images/in.png";
+import gitImg from "../../../images/git.png";
+import messengerImg from "../../../images/messenger.png";
 import ContactItem from "./ContactItem";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-info">
+      <section className="footer-info">
         <h2 style={{ color: "white" }}>Bored activities</h2>
         <p>
           This is my first React application. It is my own implementation of{" "}
@@ -28,7 +28,7 @@ const Footer = () => {
             GitHub repository
           </a>
         </p>
-      </div>
+      </section>
       <address className="footer-contact">
         <h2 style={{ color: "white" }}>Contact</h2>
         <div className="contact-details">

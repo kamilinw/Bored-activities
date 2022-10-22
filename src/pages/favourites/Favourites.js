@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import ActivityView from "./ActivityView";
-import { getKeysFromLocalStorage } from "./LocalStorage";
+import ActivityView from "../random_activity/ActivityView";
+import { getKeysFromLocalStorage } from "../../utils/LocalStorage";
 import NoFavourites from "./NoFavourites";
 
 const Favourites = () => {

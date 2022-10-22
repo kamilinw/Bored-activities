@@ -9,7 +9,7 @@ import "antd/dist/antd.css";
 import {
   getKeysFromLocalStorage,
   saveKeysToLocalStorage,
-} from "./LocalStorage";
+} from "../../utils/LocalStorage";
 
 const ActivityView = ({ activityObject, setIsLiked }) => {
   if (activityObject.error) {

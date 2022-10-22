@@ -1,7 +1,7 @@
-import cssImg from "./images/css.png";
-import htmlImg from "./images/html.png";
-import jsImg from "./images/js.png";
-import reactImg from "./images/react.png";
+import cssImg from "../../images/css.png";
+import htmlImg from "../../images/html.png";
+import jsImg from "../../images/js.png";
+import reactImg from "../../images/react.png";
 import Technology from "./Technology";
 
 const About = () => {
