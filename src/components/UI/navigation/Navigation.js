@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import "antd/dist/antd.css";
 import { Breadcrumb } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/`;
+    navigate(path);
+  };
+
   return (
     <nav className="navigation">
       <div id="logo">
-        <p>Bored activities</p>
+        <Link to="/">Bored activities</Link>
       </div>
       <Breadcrumb>
         <Breadcrumb.Item>
