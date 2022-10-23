@@ -6,10 +6,7 @@ import {
   QuestionCircleOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import {
-  getKeysFromLocalStorage,
-  saveKeysToLocalStorage,
-} from "../../utils/LocalStorage";
+import LocalStorage from "../../utils/LocalStorage";
 
 const ActivityView = ({ activityObject, setIsLiked }) => {
   if (activityObject.error) {
@@ -28,20 +25,20 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
 
   const likeButtonOnClick = (activityLiked) => {
     if (activityLiked) {
-      let localStorageKeys = getKeysFromLocalStorage();
+      let localStorageKeys = LocalStorage.getKeysFromLocalStorage();
       localStorageKeys = [...localStorageKeys, key];
-      saveKeysToLocalStorage(localStorageKeys);
+      LocalStorage.saveKeysToLocalStorage(localStorageKeys);
       window.localStorage.setItem(
         key,
         JSON.stringify({ ...activityObject, isLiked: activityLiked })
       );
     } else {
-      let localStorageKeys = getKeysFromLocalStorage();
+      let localStorageKeys = LocalStorage.getKeysFromLocalStorage();
       const keyIndex = localStorageKeys.indexOf(key);
       if (keyIndex >= 0) {
         localStorageKeys.splice(keyIndex, 1);
       }
-      saveKeysToLocalStorage(localStorageKeys);
+      LocalStorage.saveKeysToLocalStorage(localStorageKeys);
       window.localStorage.removeItem(key);
     }
     setIsLiked(activityLiked, activityObject);

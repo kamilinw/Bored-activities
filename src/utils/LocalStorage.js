@@ -1,4 +1,4 @@
-const getKeysFromLocalStorage = () => {
+export const getKeysFromLocalStorage = () => {
   let localStorageKeys = JSON.parse(
     window.localStorage.getItem("favourite_activity_keys")
   );
@@ -8,9 +8,9 @@ const getKeysFromLocalStorage = () => {
   return localStorageKeys;
 };
 
-const saveKeysToLocalStorage = (keys) => {
+export const saveKeysToLocalStorage = (keys) => {
   window.localStorage.removeItem("favourite_activity_keys");
   window.localStorage.setItem("favourite_activity_keys", JSON.stringify(keys));
 };
 
-export { getKeysFromLocalStorage, saveKeysToLocalStorage };
+export default { getKeysFromLocalStorage, saveKeysToLocalStorage };
