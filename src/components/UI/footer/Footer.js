@@ -11,15 +11,17 @@ const Footer = () => {
       <section className="footer-info">
         <h2 style={{ color: "white" }}>Bored activities</h2>
         <p>
-          This is my first React application. It is my own implementation of{" "}
+          It is my own implementation of{" "}
           <a
             href="https://www.boredapi.com/documentation#endpoints-price"
             target="_blank"
             rel="noreferrer"
           >
-            Bored API.
-          </a>{" "}
-          Check out source code on{" "}
+            Bored API
+          </a>
+          , witch enables you to find things to do when you&apos;re bored. This
+          is my first React application, witch was build during my learning
+          process. Check out source code on{" "}
           <a
             href="https://github.com/kamilinw/Bored-activities"
             target="_blank"
@@ -32,9 +34,17 @@ const Footer = () => {
       <address className="footer-contact">
         <h2 style={{ color: "white" }}>Contact</h2>
         <div className="contact-details">
-          <div className="contact-name">
-            <p>Kamil Wnęk</p>
-          </div>
+          <ContactItem info="Kamil Wnęk" />
+          <ContactItem
+            imgPath={telImg}
+            alt="telephone"
+            info="+48 607 473 375"
+          />
+          <ContactItem
+            imgPath={mailImg}
+            alt="mail"
+            info="kamil.wnek@gmail.com"
+          />
           <ContactItem
             imgPath={linkedinImg}
             alt="linkedin"
@@ -42,20 +52,10 @@ const Footer = () => {
             link="https://www.linkedin.com/in/wnek-kamil/"
           />
           <ContactItem
-            imgPath={telImg}
-            alt="telephone"
-            info="+48 607 473 375"
-          />
-          <ContactItem
             imgPath={gitImg}
             alt="github"
             info="Github"
             link="https://github.com/kamilinw"
-          />
-          <ContactItem
-            imgPath={mailImg}
-            alt="mail"
-            info="kamil.wnek@gmail.com"
           />
           <ContactItem
             imgPath={messengerImg}

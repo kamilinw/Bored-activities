@@ -226,6 +226,7 @@ body {
   flex-direction: column;
   flex: 1;
   margin: 3em;
+  min-width: 200px;
 }
 
 .footer-contact {
@@ -236,14 +237,26 @@ body {
 
 }
 
-.contact-details {
-  display: grid;
-  grid-template-columns: auto auto;
+@media (min-width:450px) {
+  .contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    min-width: 320px;
+    max-height: 120px;
+  }
 }
 
 .contact-item {
   display: flex;
   gap: 1em;
+  padding: 5px;
+}
+
+.contact-info p,
+.contact-name p {
+  margin-bottom: 0;
 }
 
 .icon img {
