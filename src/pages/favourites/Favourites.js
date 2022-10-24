@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import ActivityView from "../random_activity/ActivityView";
+import ActivityView from "../../components/ActivityView";
 import { getKeysFromLocalStorage } from "../../utils/LocalStorage";
-import NoFavourites from "./NoFavourites";
+import NoFavourites from "../../components/NoFavourites";
 
 const Favourites = () => {
   const [activities, setActivities] = useState([]);

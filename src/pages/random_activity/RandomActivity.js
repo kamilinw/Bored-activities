@@ -1,8 +1,8 @@
-import ActivityForm from "./ActivityForm";
-import ActivityView from "./ActivityView";
+import ActivityForm from "../../components/ActivityForm";
+import ActivityView from "../../components/ActivityView";
 import { useCallback, useEffect, useState } from "react";
-import ActivityErrorBoundary from "./ActivityErrorBoundary";
-import ErrorFetchingActivity from "./ErrorFetchingActivity";
+import ActivityErrorBoundary from "../../components/ActivityErrorBoundary";
+import ErrorFetchingActivity from "../../components/ErrorFetchingActivity";
 
 const RandomActivity = () => {
   const [activity, setActivity] = useState({ error: "loading" });

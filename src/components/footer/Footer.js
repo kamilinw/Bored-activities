@@ -1,8 +1,8 @@
-import telImg from "../../../images/tel.png";
-import mailImg from "../../../images/mail.png";
-import linkedinImg from "../../../images/in.png";
-import gitImg from "../../../images/git.png";
-import messengerImg from "../../../images/messenger.png";
+import telImg from "../../images/tel.png";
+import mailImg from "../../images/mail.png";
+import linkedinImg from "../../images/in.png";
+import gitImg from "../../images/git.png";
+import messengerImg from "../../images/messenger.png";
 import ContactItem from "./ContactItem";
 
 const Footer = () => {

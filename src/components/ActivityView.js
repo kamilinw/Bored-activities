@@ -6,7 +6,7 @@ import {
   QuestionCircleOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import LocalStorage from "../../utils/LocalStorage";
+import LocalStorage from "../utils/LocalStorage";
 
 const ActivityView = ({ activityObject, setIsLiked }) => {
   if (activityObject.error) {
