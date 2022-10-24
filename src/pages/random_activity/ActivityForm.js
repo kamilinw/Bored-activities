@@ -66,7 +66,7 @@ const ActivityForm = ({ onSubmit }) => {
         <label htmlFor="type">Type:</label>
         <br />
         <Select
-          style={{ width: 150 }}
+          className="activity-input"
           onChange={(option) => setType(option)}
           allowClear
         >

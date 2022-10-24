@@ -12,6 +12,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  font-size: larger;
 }
 
 /* Header */
@@ -28,6 +29,10 @@
   padding: 1em 6% 0.7em 6%;
 }
 
+.navigation span {
+  font-size: large;
+}
+
 .link:focus {
   outline: auto;
 }
@@ -38,9 +43,9 @@
   align-items: center;
 }
 
-#logo p {
-  font-size: xx-large;
-  font-weight: 200;
+#logo a {
+  font-size: 32pt;
+  font-weight: 300;
   font-family: 'Brush Script MT';
   color: var(--primary-color);
   margin: 0;
@@ -58,7 +63,57 @@
   justify-content: space-between;
 }
 
-.error {
+.activity-form {
+  padding: 2em 3em 2em 3em;
+  background-color: white;
+  box-shadow: 0px 0px 7px var(--shadow-color);
+  flex: 1 1 0;
+  min-width: 250px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity-form form {
+  width: 100%;
+  max-width: 270px;
+}
+
+.activity-form label {
+  font-size: small;
+}
+
+.activity-form form>button {
+  height: 2.5em;
+  font-size: large;
+}
+
+.user-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.activity-input {
+  width: 100%;
+}
+
+.user-input button {
+  margin: 1em;
+  scale: 1.5;
+}
+
+.slider {
+  width: 100%;
+}
+
+.slider span {
+  font-size: small;
+}
+
+.activity-error {
   min-width: 250px;
   background-color: white;
   box-shadow: 0px 0px 7px var(--shadow-color);
@@ -72,24 +127,7 @@
   border-radius: 5px;
 }
 
-.activity-form {
-  margin: 0;
-  padding: 10px;
-  background-color: white;
-  box-shadow: 0px 0px 7px var(--shadow-color);
-  flex: 1 1 0;
-  min-width: 200px;
-  display: flex;
-  justify-content: center;
-  border-radius: 5px;
-}
-
-.activity-form label {
-  font-size: x-small;
-}
-
 .activity-view {
-  margin: 0;
   min-width: 250px;
   background-color: white;
   box-shadow: 0px 0px 7px var(--shadow-color);
@@ -100,50 +138,26 @@
   border-radius: 5px;
 }
 
-#information {
+#heart {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 1.5em;
+  right: 1.5em;
   transform: scale(1.5);
   transition: transform 150ms ease-out 50ms;
 }
 
-.user-input {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5em;
-}
-
-.switch {
-  padding: 2em;
-  margin: 1em;
-}
-
-.slider {
-  width: 100px;
-}
-
-.slider span {
-  font-size: x-small;
-}
-
+#heart:hover,
 #information:hover {
   transform: scale(2);
   cursor: pointer;
 }
 
-#heart {
+#information {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.5em;
+  left: 1.5em;
   transform: scale(1.5);
   transition: transform 150ms ease-out 50ms;
-}
-
-#heart:hover {
-  transform: scale(2);
-  cursor: pointer;
 }
 
 .activity-details {
@@ -184,7 +198,15 @@
   position: relative;
 }
 
+@media screen and (max-width: 1024px) {
+  .rand-act {
+    flex-direction: column;
+  }
+}
+
 @media screen and (max-width: 768px) {
+
+
   .activity-view {
     flex-direction: column;
   }
@@ -195,6 +217,15 @@
 
   .activity-text {
     padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+
+  .rand-act {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 }
 
@@ -234,7 +265,7 @@
   border-top: 2px solid var(--primary-color);
   margin-top: 1em;
   width: 100%;
-  padding: 3em;
+  padding: 4em 5% 4em 5%;
   color: white;
   display: flex;
   flex-wrap: wrap;
@@ -250,14 +281,14 @@
 .footer-info {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 4;
   min-width: 290px;
 }
 
 .footer-contact {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 3;
 }
 
 @media (min-width:450px) {
