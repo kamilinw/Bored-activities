@@ -205,8 +205,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
-
   .activity-view {
     flex-direction: column;
   }
