@@ -3,31 +3,13 @@ import htmlImg from "../../images/html.png";
 import jsImg from "../../images/js.png";
 import reactImg from "../../images/react.png";
 import AboutTechnology from "../../components/AboutTechnology";
+import AboutApplicationInfo from "../../components/AboutApplicationInfo";
 
 const About = () => {
   return (
     <main className="about">
       <h2>Bored Activities</h2>
-      <p>
-        It is my own implementation of{" "}
-        <a
-          href="https://www.boredapi.com/documentation#endpoints-price"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Bored API
-        </a>
-        , witch enables you to find things to do when you&apos;re bored. This is
-        my first React application, witch was build during my learning process.
-        Check out source code on{" "}
-        <a
-          href="https://github.com/kamilinw/Bored-activities"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub repository
-        </a>
-      </p>
+      <AboutApplicationInfo />
       <h2>Technologies</h2>
       <div className="tech">
         <AboutTechnology
@@ -45,13 +27,14 @@ const About = () => {
       </div>
       <h2>About me</h2>
       <p>
-        Programming has always been my passion. Right now I&apos;m software
-        engineer and I&apos;m programming home automation solutions, as well as
-        developing software for electric vehicle charging stations. For some
-        time I&apos;m learning about web technologies. I think that the
-        technical studies I have completed (Mechatronics at the Rzeszów
-        University of Technology), will help me to understand real problems and
-        find their solutions.
+        My name is Kamil and I&apos;m software engineer. I&apos;m programming
+        home automation solutions, as well as developing software for electric
+        vehicle charging stations. Programming has always been my passion.
+        I&apos;m also interested in web technologies including JavaScript,
+        React, HTML, CSS, Java and REST API. I graduated with honors from
+        Rzeszow University of Technology with a degree in mechatronics. I think
+        a technical background will help me to understand and find solutions to
+        complex problems.
       </p>
     </main>
   );
