@@ -1,6 +1,6 @@
 import { render } from "react-dom";
 import { StrictMode } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navigation from "./components/navigation/Navigation";
 import RandomActivity from "./pages/random_activity/RandomActivity";
 import Favourites from "./pages/favourites/Favourites";
@@ -14,6 +14,7 @@ const App = () => {
         <Navigation />
         <Routes>
           <Route path="/" element={<RandomActivity />} />
+          <Route path="/reload" element={<Navigate to="/" replace />} />
           <Route path="/fav" element={<Favourites />} />
           <Route path="/about" element={<About />} />
         </Routes>

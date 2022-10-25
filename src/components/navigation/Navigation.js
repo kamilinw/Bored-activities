@@ -6,17 +6,13 @@ const Navigation = () => {
   return (
     <nav className="navigation">
       <div id="logo">
-        <Link to="/" onClick={() => window.location.reload()}>
+        <Link to="/" onClick={() => window.location.to("/")}>
           Bored activities
         </Link>
       </div>
       <Breadcrumb>
         <Breadcrumb.Item>
-          <Link
-            className="link"
-            to="/"
-            onClick={() => window.location.reload()}
-          >
+          <Link className="link" to="/">
             Random activity
           </Link>
         </Breadcrumb.Item>
