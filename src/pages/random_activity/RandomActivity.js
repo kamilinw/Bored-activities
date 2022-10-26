@@ -12,7 +12,6 @@ const RandomActivity = () => {
       .then((response) => response.json())
       .then(
         (json) => {
-          console.log(json);
           let isLiked = false;
           if (json.key) {
             const localStorageActivity = JSON.parse(

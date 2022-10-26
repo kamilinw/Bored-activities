@@ -5,7 +5,7 @@ import {
   HeartOutlined,
   QuestionCircleOutlined,
 } from "@ant-design/icons";
-import "antd/dist/antd.css";
+//import "antd/dist/antd.css";
 import LocalStorage from "../utils/LocalStorage";
 
 const ActivityView = ({ activityObject, setIsLiked }) => {
@@ -69,7 +69,9 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
         ) : (
           ""
         )}
-        <p className="activity">{activity}</p>
+        <p className="activity" data-testid="activity_description">
+          {activity}
+        </p>
         {isLiked ? (
           <HeartFilled
             tabIndex="0"

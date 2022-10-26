@@ -1,7 +1,7 @@
 {
-  "name": "adopt-me",
-  "version": "7.0.0",
-  "description": "Adopt pets via adopt-me",
+  "name": "bored-activity",
+  "version": "1.0.0",
+  "description": "Search for activity when you are bored",
   "main": "src/App.js",
   "scripts": {
     "dev": "parcel src/index.html",
@@ -11,10 +11,11 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
-  "author": "Brian Holt <btholt+citr-v7-project@gmail.com>",
+  "author": "Kamil Wnek",
   "license": "Apache-2.0",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "7.16.7",
+    "@babel/plugin-syntax-jsx": "^7.18.6",
     "@babel/preset-env": "^7.19.1",
     "@babel/preset-react": "^7.18.6",
     "@testing-library/react": "^12.1.3",
@@ -43,6 +44,9 @@
   ],
   "jest": {
     "automock": false,
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
     "setupFiles": [
       "./src/setupJest.js"
     ]

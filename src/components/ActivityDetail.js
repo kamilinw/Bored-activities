@@ -1,5 +1,5 @@
 import { Progress } from "antd";
-import "antd/dist/antd.css";
+//import "antd/dist/antd.css";
 
 const ActivityDetail = ({ name, value }) => {
   return (
