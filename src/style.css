@@ -138,7 +138,7 @@
   border-radius: 5px;
 }
 
-#heart {
+.heart {
   position: absolute;
   bottom: 1.5em;
   right: 1.5em;
@@ -146,13 +146,13 @@
   transition: transform 150ms ease-out 50ms;
 }
 
-#heart:hover,
-#information:hover {
+.heart:hover,
+.information:hover {
   transform: scale(2);
   cursor: pointer;
 }
 
-#information {
+.information {
   position: absolute;
   bottom: 1.5em;
   left: 1.5em;

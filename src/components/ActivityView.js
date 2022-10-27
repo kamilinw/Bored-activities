@@ -58,7 +58,8 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
         {typeof link != "function" && link.length > 0 ? (
           <QuestionCircleOutlined
             tabIndex="0"
-            id="information"
+            className="information"
+            data-testid="information_icon"
             onClick={() => window.open(link)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
@@ -75,7 +76,8 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
         {isLiked ? (
           <HeartFilled
             tabIndex="0"
-            id="heart"
+            className="heart"
+            data-testid="heart_filled_icon"
             style={{ color: "#eb2f96" }}
             onClick={() => likeButtonOnClick(false)}
             onKeyDown={(e) => {
@@ -87,7 +89,8 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
         ) : (
           <HeartOutlined
             tabIndex="0"
-            id="heart"
+            className="heart"
+            data-testid="heart_outlined_icon"
             style={{ color: "#eb2f96" }}
             onClick={() => likeButtonOnClick(true)}
             onKeyDown={(e) => {
