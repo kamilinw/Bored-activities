@@ -45,7 +45,7 @@ const ActivityView = ({ activityObject, setIsLiked }) => {
   };
 
   return (
-    <section className="activity-view">
+    <section className="activity-view" data-testid="activity-view">
       <div className="activity-details">
         <ul>
           <ActivityDetail name="type" value={type} />

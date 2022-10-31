@@ -1,6 +1,5 @@
 import { Slider, Switch, Select, Button } from "antd";
 import { useState } from "react";
-import "antd/dist/antd.css";
 const { Option } = Select;
 
 const ActivityForm = ({ onSubmit }) => {
@@ -132,7 +131,12 @@ const ActivityForm = ({ onSubmit }) => {
         </div>
         <br />
 
-        <Button type="primary" block onClick={() => onSubmit(makeParams())}>
+        <Button
+          type="primary"
+          data-testid="submit_form_button"
+          block
+          onClick={() => onSubmit(makeParams())}
+        >
           Search for activity
         </Button>
       </form>
