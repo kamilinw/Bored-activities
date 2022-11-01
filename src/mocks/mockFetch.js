@@ -10,7 +10,7 @@ const activity = {
 
 export default async function mockFetch(url) {
   switch (url) {
-    case "http://www.boredapi.com/api/activity/?": {
+    case "https://www.boredapi.com/api/activity/?": {
       return {
         ok: true,
         status: 200,

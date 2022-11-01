@@ -1,9 +1,12 @@
 {
   "name": "bored-activity",
   "version": "1.0.0",
+  "homepage": "https://kamilinw.github.io/bored-activities",
   "description": "Search for activity when you are bored",
-  "main": "src/App.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "build": "parcel build src/index.html --public-url .",
     "dev": "parcel src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
@@ -28,6 +31,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
+    "gh-pages": "^4.0.0",
     "jest": "^27.5.1",
     "jest-fetch-mock": "^3.0.3",
     "parcel": "2.2.1",
@@ -36,6 +40,7 @@
     "react-test-renderer": "^17.0.2"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "antd": "^4.23.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",

@@ -8,7 +8,7 @@ const RandomActivity = () => {
   const [activity, setActivity] = useState({ error: "loading" });
 
   const requestActivity = useCallback((data = "") => {
-    fetch("http://www.boredapi.com/api/activity/?" + data)
+    fetch("https://www.boredapi.com/api/activity/?" + data)
       .then((response) => response.json())
       .then(
         (json) => {

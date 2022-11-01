@@ -37,7 +37,7 @@ const ActivityForm = ({ onSubmit }) => {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    console.log("refresh prevented");
+    onSubmit(makeParams());
   };
 
   const makeParams = () => {
@@ -79,7 +79,6 @@ const ActivityForm = ({ onSubmit }) => {
         <label htmlFor="participants">Participants:</label>
         <div className="user-input">
           <Switch
-            className="switch"
             size="small"
             checked={participantsEnabled}
             onChange={(checked) => setParticipantsEnabled(checked)}
@@ -133,9 +132,9 @@ const ActivityForm = ({ onSubmit }) => {
 
         <Button
           type="primary"
+          htmlType="submit"
           data-testid="submit_form_button"
           block
-          onClick={() => onSubmit(makeParams())}
         >
           Search for activity
         </Button>
